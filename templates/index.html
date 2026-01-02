@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <title>Temperature Predictor</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Constantine Temperature Predictor</h1>
+        <h1>🌤 Constantine Temperature Predictor</h1>
+        <p class="subtitle">Predict future temperatures with one click</p>
+
         <form method="POST">
-            <label for="date">Enter a date (YYYY-MM-DD):</label>
-            <input type="date" id="date" name="date" required>
-            <button type="submit">Predict</button>
+            <div class="input-group">
+                <label for="date">Select a date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <button type="submit">Predict Temperature</button>
         </form>
+
         {% if prediction %}
         <div class="result">
-            <h2>Prediction: {{ prediction }}</h2>
+            <span>Predicted Temperature</span>
+            <h2>{{ prediction }}</h2>
         </div>
         {% endif %}
     </div>
