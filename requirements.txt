@@ -1,6 +1,7 @@
-flask
+Flask
 torch
 numpy
 pandas
 matplotlib
 seaborn
+gunicorn
